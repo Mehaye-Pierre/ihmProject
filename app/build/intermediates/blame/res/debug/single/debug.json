@@ -42,5 +42,9 @@
     {
         "merged": "C:\\Users\\Seawolf\\StudioProjects\\SpeechToText\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\Seawolf\\StudioProjects\\SpeechToText\\app\\src\\main\\res\\drawable-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Seawolf\\StudioProjects\\SpeechToText\\app\\build\\intermediates\\res\\merged\\debug\\layout_main_menu.xml.flat",
+        "source": "C:\\Users\\Seawolf\\StudioProjects\\SpeechToText\\app\\src\\main\\res\\layout\\main_menu.xml"
     }
 ]

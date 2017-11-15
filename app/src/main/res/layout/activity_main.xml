@@ -42,4 +42,23 @@
             android:textStyle="normal" />
     </LinearLayout>
 
+    <Button
+        android:id="@+id/btnRead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtSpeechInput"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:text="@android:string/ok" />
+
+    <EditText
+        android:id="@+id/readText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnRead"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name" />
+
 </RelativeLayout>

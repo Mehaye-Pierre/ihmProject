@@ -5,7 +5,7 @@ android {
     buildToolsVersion '26.0.2'
 
     defaultConfig {
-        applicationId "info.androidhive.speechtotext"
+        applicationId "com.jdr"
         minSdkVersion 21
         targetSdkVersion 26
     }
