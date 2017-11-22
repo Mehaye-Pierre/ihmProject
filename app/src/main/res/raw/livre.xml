@@ -1,0 +1,207 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<livre>
+    <paragraphe>
+        <titre> 0 </titre>
+        <contenu>
+            Bonjour et merci d'avoir choisis Soya (Story of your adventure). Vous allez être le héros d'une aventure palpitante et entraînante. Elle est découpée en paragraphes qui exposent une situation. Vous pourrez réagir à cette situation grâce à un ensemble de choix possibles, qui vous emmènent à d'autres paragraphes. Pour jouer, vous pouvez toucher les choix qui vous intéressent ou bien utiliser la reconnaissance vocale.
+        </contenu>
+    </paragraphe>
+
+    <paragraphe>
+        <titre> 1 </titre>
+        <contenu>
+            Bienvenue dans le monde de Rivellon ! Vous êtes un Traque-Source et chassez les Ensourceleurs qui puisent leurs sombres pouvoirs de la corruption de la Source. Vous avez été envoyé à Cyseal par vos supérieurs pour enquêter sur l'étrange meurtre du conseiller Jacques. Vous débarquez sur une plage aux abords de la ville. Vous entendez, plus loin, le bruit d'une bataille. Vous apercevez une personne au sol, immobile.
+        </contenu>
+        <reponses>
+            <choix>
+                <titre> A </titre>
+                <contenu> Relire vos notes sur la Source </contenu>
+                <cible> 2 </cible>
+            </choix>
+            <choix>
+                <titre> B </titre>
+                <contenu> Avancer vers la ville </contenu>
+                <cible> 3 </cible>
+            </choix>
+            <choix>
+                <titre> C </titre>
+                <contenu> Examiner la personne au sol </contenu>
+                <cible> 4 </cible>
+            </choix>
+        </reponses>
+    </paragraphe>
+
+    <paragraphe>
+        <titre> 2 </titre>
+        <contenu>
+            Vous sortez vos notes et commencez à lire : "La Source est à l'origine de la magie dans le monde, mais elle a été corrompue et ceux qui l'utilisent sombrent dans une folie destructrice.". Le reste des notes sont constitués de dessins... évocateurs. Peut-être qu'il eut été préférable d'être plus assidu lors de vos leçons.
+        </contenu>
+        <reponses>
+            <choix>
+                <titre> A </titre>
+                <contenu> Refermer vos notes </contenu>
+                <cible> 1 </cible>
+            </choix>
+        </reponses>
+    </paragraphe>
+
+    <paragraphe>
+        <titre> 3 </titre>
+        <contenu>
+            Alors que vous avancez vers la ville, les bruits de la bataille se font plus puissants. Nul doute que vous vous rapprochez du combat. Bientôt, vous apercevez des orcs et des humains se battre aux portes de la ville. Vous voyez un passage à travers le champ de bataille qui vous permettrait de passer sans être vu jusqu'aux portes.
+        </contenu>
+        <reponses>
+            <choix>
+                <titre> A </titre>
+                <contenu> Se joindre au combat </contenu>
+                <cible> 5 </cible>
+            </choix>
+            <choix>
+                <titre> B </titre>
+                <contenu> Se faufiler au travers du combat </contenu>
+                <cible> 6 </cible>
+            </choix>
+        </reponses>
+    </paragraphe>
+
+    <paragraphe>
+        <titre> 4 </titre>
+        <contenu>
+            La personne est morte, la gorge tranchée. En le fouillant, vous récupérez 5 pièces d’or sur lui.
+        </contenu>
+        <reponses>
+            <choix>
+                <titre> A </titre>
+                <contenu> Continuer vers la ville </contenu>
+                <cible> 3 </cible>
+            </choix>
+        </reponses>
+    </paragraphe>
+
+    <paragraphe>
+        <titre> 5 </titre>
+        <contenu>
+            Vous dégainez votre épée et plongez dans la bataille pour aider les gardes de la ville. Le métal s’entrechoque, les coups sont parés, esquivés. Le bruit des lames frappant les boucliers vous encercle, accompagné par des cris et des grognements sauvages. Vous entendez des incantations rituelles : le shaman orc se prépare à lancer un sortilège, mais lequel ?
+        </contenu>
+        <reponses>
+            <choix>
+                <titre> A </titre>
+                <contenu> Prendre le temps d’identifier le sortilège </contenu>
+                <cible> 7 </cible>
+            </choix>
+            <choix>
+                <titre> B </titre>
+                <contenu> Se préparer à esquiver </contenu>
+                <cible> 8 </cible>
+            </choix>
+            <choix>
+                <titre> C </titre>
+                <contenu> Ignorer le sort et continuer à se battre </contenu>
+                <cible> 9 </cible>
+            </choix>
+        </reponses>
+    </paragraphe>
+
+    <paragraphe>
+        <titre> 6 </titre>
+        <contenu>
+            Vous vous baissez et commencez à avancer vers le chemin à couvert. Vous vous faufilez à travers les cadavres et le sang. La bataille fait rage autour de vous, les armes s’entrechoquent, des cris et des grognements retentissent. Vous entendez un shaman orc incanter un rituel mais d'ici vous ne voyez pas de quoi il s'agit.
+        </contenu>
+        <reponses>
+            <choix>
+                <titre> A </titre>
+                <contenu> Sortir de votre couvert pour voir le shaman et vous joindre au combat </contenu>
+                <cible> 5 </cible>
+            </choix>
+            <choix>
+                <titre> B </titre>
+                <contenu> Tenter de voir discrètement le shaman </contenu>
+                <cible> 10 </cible>
+            </choix>
+            <choix>
+                <titre> C </titre>
+                <contenu> Ignorer le shaman et continuer à avancer </contenu>
+                <cible> 11 </cible>
+            </choix>
+        </reponses>
+    </paragraphe>
+
+    <paragraphe>
+        <titre> 7 </titre>
+        <contenu>
+            Vous prenez le temps d'écouter et d'analyser l'incantation : une pluie de météores ! Vite ! Il faut l'empêcher de lancer ce sort ou trouver un abri ! Malheureusement, plusieurs orcs vous séparent de lui. Une grotte se trouve non loin, mais vous n'êtes pas certain qu'elle résiste à une pluie de météores.
+        </contenu>
+        <reponses>
+            <choix>
+                <titre> A </titre>
+                <contenu> Charger sur le shaman, en esquivant les orcs </contenu>
+                <cible> 12 </cible>
+            </choix>
+            <choix>
+                <titre> B </titre>
+                <contenu> Tenter de lancer un couteau pour blesser le shaman </contenu>
+                <cible> 13 </cible>
+            </choix>
+            <choix>
+                <titre> C </titre>
+                <contenu> Se réfugier dans la grotte </contenu>
+                <cible> 14 </cible>
+            </choix>
+        </reponses>
+    </paragraphe>
+
+    <paragraphe>
+        <titre> 8 </titre>
+        <contenu>
+            Vous ne savez pas ce que le shaman s'apprête à lancer, mais vous vous tenez prêt à plonger sur le sol pour esquiver. Lorsque le shaman finit son incantation, le ciel s'assombrit, des flammes apparaissent et se mêlent aux nuages puis des blocs de roches en feu tombent des cieux. Une pluie de météores ! Vous tentez de vous réfugier dans une grotte à proximité, mais une météore vous tombe dessus et vous mourrez.
+            Fin de la partie.
+        </contenu>
+        <reponses>
+            <choix>
+                <titre> A </titre>
+                <contenu> Revenir au menu principal </contenu>
+                <cible> ? </cible>
+            </choix>
+        </reponses>
+    </paragraphe>
+
+    <paragraphe>
+        <titre> 9 </titre>
+        <contenu>
+            Vous ignorez les incantations du shaman et continuez à vous combattre contre les orcs. Lorsque le shaman finit son incantation, le ciel s'assombrit, des flammes apparaissent et se mêlent aux nuages puis des blocs de roches en feu tombent des cieux. Une pluie de météores ! Vous tentez de vous réfugier dans une grotte à proximité, mais une météore vous tombe dessus et vous mourrez.
+            Fin de la partie.
+        </contenu>
+        <reponses>
+            <choix>
+                <titre> A </titre>
+                <contenu> Revenir au menu principal </contenu>
+                <cible> ? </cible>
+            </choix>
+        </reponses>
+    </paragraphe>
+
+    <paragraphe>
+        <titre> 10 </titre>
+        <contenu>
+            Vous sortez la tête de votre couvert afin d'avoir la vision sur le champ de bataille. Au bout de quelques instants, vous apperçevez le shaman qui incante un sort.
+        </contenu>
+        <reponses>
+            <choix>
+                <titre> A </titre>
+                <contenu> Tenter d'identifier le sort </contenu>
+                <cible> 7 </cible>
+            </choix>
+            <choix>
+                <titre> B </titre>
+                <contenu> Se préparer à esquiver </contenu>
+                <cible> 8 </cible>
+            </choix>
+            <choix>
+                <titre> C </titre>
+                <contenu> Ignorer le sort et continuer à avancer </contenu>
+                <cible> 15 </cible>
+            </choix>
+        </reponses>
+    </paragraphe>
+</livre>

@@ -1,58 +1,54 @@
 package com.jdr;
 
+
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Locale;
 
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.view.Menu;
-import android.view.View;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.speech.tts.TextToSpeech;
-import android.widget.EditText;
-import android.widget.Button;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
 
 public class MainActivity extends Activity {
 
-	private TextView txtSpeechInput;
-	private EditText textRead;
+	private TextView textRead;
 	private TextToSpeech TTS;
-	private ImageButton btnSpeak;
-	private Button btnRead;
+	private SharedPreferences sharedPref;
+	private int currentChapter;
 	private final int REQ_CODE_SPEECH_INPUT = 100;
+	final String NEW_GAME =  "NEW_GAME";
+	final String SAVED_CHAPTER = "SAVED_CHAPTER";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(com.jdr.R.layout.activity_main);
 
-		txtSpeechInput = (TextView) findViewById(com.jdr.R.id.txtSpeechInput);
-		btnSpeak = (ImageButton) findViewById(com.jdr.R.id.btnSpeak);
-		btnRead = (Button) findViewById(com.jdr.R.id.btnRead);
-		textRead = (EditText) findViewById(com.jdr.R.id.readText);
+		textRead =  findViewById(com.jdr.R.id.readText);
 
 
 		// hide the action bar
 		getActionBar().hide();
-
-		btnSpeak.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				promptSpeechInput();
-			}
-		});
-
-		btnRead.setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View v) {
-				readTextInput();
-			}
-		});
 
 		TTS=new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
 			@Override
@@ -62,7 +58,52 @@ public class MainActivity extends Activity {
 				}
 			}
 		});
+		sharedPref = getPreferences(Context.MODE_PRIVATE);
+		Intent intent = getIntent();
 
+		if (intent != null){
+
+
+			boolean newGame = intent.getBooleanExtra(NEW_GAME,true);
+			if (newGame) {
+				currentChapter = 0;
+				saveGame();
+			}
+			else {
+				currentChapter = getLoadChapter();
+			}
+		}
+		try {
+
+			InputStream is = getResources().openRawResource(R.raw.livre);
+
+			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+
+			Document doc = dBuilder.parse(is);
+
+			Element element=doc.getDocumentElement();
+			element.normalize();
+
+			NodeList nList = doc.getElementsByTagName("paragraphe");
+			for (int i=0; i<nList.getLength(); i++) {
+
+				Node node = nList.item(i);
+				if (node.getNodeType() == Node.ELEMENT_NODE) {
+					Element element2 = (Element) node;
+					if (currentChapter == Integer.parseInt(getValue("titre", element2).trim())){
+						textRead.setText(getValue("contenu", element2));
+					}
+				}
+			}
+
+		} catch (ParserConfigurationException e) {
+			e.printStackTrace();
+		} catch (SAXException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -94,6 +135,23 @@ public class MainActivity extends Activity {
 		}
 	}
 
+	private void saveGame(){
+		SharedPreferences.Editor editor = sharedPref.edit();
+		editor.putInt(SAVED_CHAPTER, currentChapter);
+		editor.commit();
+
+	}
+
+	private int getLoadChapter(){
+		return sharedPref.getInt(SAVED_CHAPTER, 0);
+	}
+
+	private void goToChapter(int i){
+
+	}
+
+
+
 	/**
 	 * Receiving speech input
 	 * */
@@ -107,7 +165,7 @@ public class MainActivity extends Activity {
 
 				ArrayList<String> result = data
 						.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-				txtSpeechInput.setText(result.get(0));
+				String stringResult = result.get(0);
 			}
 			break;
 		}
@@ -121,6 +179,18 @@ public class MainActivity extends Activity {
 		getMenuInflater().inflate(com.jdr.R.menu.main, menu);
 		return true;
 	}
+
+	private static String getValue(String tag, Element element) {
+		NodeList nodeList = element.getElementsByTagName(tag).item(0).getChildNodes();
+		Node node = nodeList.item(0);
+		return node.getNodeValue();
+	}
+
+
+
+
+
+
 
 
 }
