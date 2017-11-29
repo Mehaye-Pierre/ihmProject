@@ -4,8 +4,13 @@
     <paragraphe>
         <titre> 0 </titre>
         <contenu>
-            Bonjour et merci d'avoir choisis Soya (Story of your adventure). Vous allez être le héros d'une aventure palpitante et entraînante. Elle est découpée en paragraphes qui exposent une situation. Vous pourrez réagir à cette situation grâce à un ensemble de choix possibles, qui vous emmènent à d'autres paragraphes. Pour jouer, vous pouvez toucher les choix qui vous intéressent ou bien utiliser la reconnaissance vocale.
+            Bonjour et merci d'avoir choisi Soya (Story of your adventure). Vous allez être le héros d'une aventure palpitante et entraînante. Elle est découpée en paragraphes qui exposent une situation. Vous pourrez réagir à cette situation grâce à un ensemble de choix possibles, qui vous emmènent à d'autres paragraphes. Pour jouer, vous pouvez toucher les choix qui vous intéressent ou bien utiliser la reconnaissance vocale.
         </contenu>
+        <choix>
+            <titre> A </titre>
+            <contenu> Commencer </contenu>
+            <cible> 1 </cible>
+        </choix>
     </paragraphe>
 
     <paragraphe>
@@ -13,23 +18,23 @@
         <contenu>
             Bienvenue dans le monde de Rivellon ! Vous êtes un Traque-Source et chassez les Ensourceleurs qui puisent leurs sombres pouvoirs de la corruption de la Source. Vous avez été envoyé à Cyseal par vos supérieurs pour enquêter sur l'étrange meurtre du conseiller Jacques. Vous débarquez sur une plage aux abords de la ville. Vous entendez, plus loin, le bruit d'une bataille. Vous apercevez une personne au sol, immobile.
         </contenu>
-        <reponses>
-            <choix>
-                <titre> A </titre>
-                <contenu> Relire vos notes sur la Source </contenu>
-                <cible> 2 </cible>
-            </choix>
-            <choix>
-                <titre> B </titre>
-                <contenu> Avancer vers la ville </contenu>
-                <cible> 3 </cible>
-            </choix>
-            <choix>
-                <titre> C </titre>
-                <contenu> Examiner la personne au sol </contenu>
-                <cible> 4 </cible>
-            </choix>
-        </reponses>
+
+        <choix>
+            <titre> A </titre>
+            <contenu> Relire vos notes sur la Source </contenu>
+            <cible> 2 </cible>
+        </choix>
+        <choix>
+            <titre> B </titre>
+            <contenu> Avancer vers la ville </contenu>
+            <cible> 3 </cible>
+        </choix>
+        <choix>
+            <titre> C </titre>
+            <contenu> Examiner la personne au sol </contenu>
+            <cible> 4 </cible>
+        </choix>
+
     </paragraphe>
 
     <paragraphe>
@@ -37,13 +42,13 @@
         <contenu>
             Vous sortez vos notes et commencez à lire : "La Source est à l'origine de la magie dans le monde, mais elle a été corrompue et ceux qui l'utilisent sombrent dans une folie destructrice.". Le reste des notes sont constitués de dessins... évocateurs. Peut-être qu'il eut été préférable d'être plus assidu lors de vos leçons.
         </contenu>
-        <reponses>
-            <choix>
-                <titre> A </titre>
-                <contenu> Refermer vos notes </contenu>
-                <cible> 1 </cible>
-            </choix>
-        </reponses>
+
+        <choix>
+            <titre> A </titre>
+            <contenu> Refermer vos notes </contenu>
+            <cible> 1 </cible>
+        </choix>
+
     </paragraphe>
 
     <paragraphe>
@@ -51,18 +56,18 @@
         <contenu>
             Alors que vous avancez vers la ville, les bruits de la bataille se font plus puissants. Nul doute que vous vous rapprochez du combat. Bientôt, vous apercevez des orcs et des humains se battre aux portes de la ville. Vous voyez un passage à travers le champ de bataille qui vous permettrait de passer sans être vu jusqu'aux portes.
         </contenu>
-        <reponses>
-            <choix>
-                <titre> A </titre>
-                <contenu> Se joindre au combat </contenu>
-                <cible> 5 </cible>
-            </choix>
-            <choix>
-                <titre> B </titre>
-                <contenu> Se faufiler au travers du combat </contenu>
-                <cible> 6 </cible>
-            </choix>
-        </reponses>
+
+        <choix>
+            <titre> A </titre>
+            <contenu> Se joindre au combat </contenu>
+            <cible> 5 </cible>
+        </choix>
+        <choix>
+            <titre> B </titre>
+            <contenu> Se faufiler au travers du combat </contenu>
+            <cible> 6 </cible>
+        </choix>
+
     </paragraphe>
 
     <paragraphe>
@@ -70,13 +75,18 @@
         <contenu>
             La personne est morte, la gorge tranchée. En le fouillant, vous récupérez 5 pièces d’or sur lui.
         </contenu>
-        <reponses>
-            <choix>
-                <titre> A </titre>
-                <contenu> Continuer vers la ville </contenu>
-                <cible> 3 </cible>
-            </choix>
-        </reponses>
+
+        <choix>
+            <titre> A </titre>
+            <contenu> Relire vos notes sur la Source </contenu>
+            <cible> 2 </cible>
+        </choix>
+        <choix>
+            <titre> B </titre>
+            <contenu> Continuer vers la ville </contenu>
+            <cible> 3 </cible>
+        </choix>
+
     </paragraphe>
 
     <paragraphe>
@@ -84,23 +94,23 @@
         <contenu>
             Vous dégainez votre épée et plongez dans la bataille pour aider les gardes de la ville. Le métal s’entrechoque, les coups sont parés, esquivés. Le bruit des lames frappant les boucliers vous encercle, accompagné par des cris et des grognements sauvages. Vous entendez des incantations rituelles : le shaman orc se prépare à lancer un sortilège, mais lequel ?
         </contenu>
-        <reponses>
-            <choix>
-                <titre> A </titre>
-                <contenu> Prendre le temps d’identifier le sortilège </contenu>
-                <cible> 7 </cible>
-            </choix>
-            <choix>
-                <titre> B </titre>
-                <contenu> Se préparer à esquiver </contenu>
-                <cible> 8 </cible>
-            </choix>
-            <choix>
-                <titre> C </titre>
-                <contenu> Ignorer le sort et continuer à se battre </contenu>
-                <cible> 9 </cible>
-            </choix>
-        </reponses>
+
+        <choix>
+            <titre> A </titre>
+            <contenu> Prendre le temps d’identifier le sortilège </contenu>
+            <cible> 7 </cible>
+        </choix>
+        <choix>
+            <titre> B </titre>
+            <contenu> Se préparer à esquiver </contenu>
+            <cible> 8 </cible>
+        </choix>
+        <choix>
+            <titre> C </titre>
+            <contenu> Ignorer le sort et continuer à se battre </contenu>
+            <cible> 9 </cible>
+        </choix>
+
     </paragraphe>
 
     <paragraphe>
@@ -108,23 +118,23 @@
         <contenu>
             Vous vous baissez et commencez à avancer vers le chemin à couvert. Vous vous faufilez à travers les cadavres et le sang. La bataille fait rage autour de vous, les armes s’entrechoquent, des cris et des grognements retentissent. Vous entendez un shaman orc incanter un rituel mais d'ici vous ne voyez pas de quoi il s'agit.
         </contenu>
-        <reponses>
-            <choix>
-                <titre> A </titre>
-                <contenu> Sortir de votre couvert pour voir le shaman et vous joindre au combat </contenu>
-                <cible> 5 </cible>
-            </choix>
-            <choix>
-                <titre> B </titre>
-                <contenu> Tenter de voir discrètement le shaman </contenu>
-                <cible> 10 </cible>
-            </choix>
-            <choix>
-                <titre> C </titre>
-                <contenu> Ignorer le shaman et continuer à avancer </contenu>
-                <cible> 11 </cible>
-            </choix>
-        </reponses>
+
+        <choix>
+            <titre> A </titre>
+            <contenu> Sortir de votre couvert pour voir le shaman et vous joindre au combat </contenu>
+            <cible> 5 </cible>
+        </choix>
+        <choix>
+            <titre> B </titre>
+            <contenu> Tenter de voir discrètement le shaman </contenu>
+            <cible> 10 </cible>
+        </choix>
+        <choix>
+            <titre> C </titre>
+            <contenu> Ignorer le shaman et continuer à avancer </contenu>
+            <cible> 11 </cible>
+        </choix>
+
     </paragraphe>
 
     <paragraphe>
@@ -132,23 +142,23 @@
         <contenu>
             Vous prenez le temps d'écouter et d'analyser l'incantation : une pluie de météores ! Vite ! Il faut l'empêcher de lancer ce sort ou trouver un abri ! Malheureusement, plusieurs orcs vous séparent de lui. Une grotte se trouve non loin, mais vous n'êtes pas certain qu'elle résiste à une pluie de météores.
         </contenu>
-        <reponses>
-            <choix>
-                <titre> A </titre>
-                <contenu> Charger sur le shaman, en esquivant les orcs </contenu>
-                <cible> 12 </cible>
-            </choix>
-            <choix>
-                <titre> B </titre>
-                <contenu> Tenter de lancer un couteau pour blesser le shaman </contenu>
-                <cible> 13 </cible>
-            </choix>
-            <choix>
-                <titre> C </titre>
-                <contenu> Se réfugier dans la grotte </contenu>
-                <cible> 14 </cible>
-            </choix>
-        </reponses>
+
+        <choix>
+            <titre> A </titre>
+            <contenu> Charger sur le shaman, en esquivant les orcs </contenu>
+            <cible> 12 </cible>
+        </choix>
+        <choix>
+            <titre> B </titre>
+            <contenu> Tenter de lancer un couteau pour blesser le shaman </contenu>
+            <cible> 13 </cible>
+        </choix>
+        <choix>
+            <titre> C </titre>
+            <contenu> Se réfugier dans la grotte </contenu>
+            <cible> 14 </cible>
+        </choix>
+
     </paragraphe>
 
     <paragraphe>
@@ -157,13 +167,13 @@
             Vous ne savez pas ce que le shaman s'apprête à lancer, mais vous vous tenez prêt à plonger sur le sol pour esquiver. Lorsque le shaman finit son incantation, le ciel s'assombrit, des flammes apparaissent et se mêlent aux nuages puis des blocs de roches en feu tombent des cieux. Une pluie de météores ! Vous tentez de vous réfugier dans une grotte à proximité, mais une météore vous tombe dessus et vous mourrez.
             Fin de la partie.
         </contenu>
-        <reponses>
-            <choix>
-                <titre> A </titre>
-                <contenu> Revenir au menu principal </contenu>
-                <cible> ? </cible>
-            </choix>
-        </reponses>
+
+        <choix>
+            <titre> A </titre>
+            <contenu> Revenir au menu principal </contenu>
+            <cible> ? </cible>
+        </choix>
+
     </paragraphe>
 
     <paragraphe>
@@ -172,13 +182,13 @@
             Vous ignorez les incantations du shaman et continuez à vous combattre contre les orcs. Lorsque le shaman finit son incantation, le ciel s'assombrit, des flammes apparaissent et se mêlent aux nuages puis des blocs de roches en feu tombent des cieux. Une pluie de météores ! Vous tentez de vous réfugier dans une grotte à proximité, mais une météore vous tombe dessus et vous mourrez.
             Fin de la partie.
         </contenu>
-        <reponses>
-            <choix>
-                <titre> A </titre>
-                <contenu> Revenir au menu principal </contenu>
-                <cible> ? </cible>
-            </choix>
-        </reponses>
+
+        <choix>
+            <titre> A </titre>
+            <contenu> Revenir au menu principal </contenu>
+            <cible> ? </cible>
+        </choix>
+
     </paragraphe>
 
     <paragraphe>
@@ -186,22 +196,257 @@
         <contenu>
             Vous sortez la tête de votre couvert afin d'avoir la vision sur le champ de bataille. Au bout de quelques instants, vous apperçevez le shaman qui incante un sort.
         </contenu>
-        <reponses>
-            <choix>
-                <titre> A </titre>
-                <contenu> Tenter d'identifier le sort </contenu>
-                <cible> 7 </cible>
-            </choix>
-            <choix>
-                <titre> B </titre>
-                <contenu> Se préparer à esquiver </contenu>
-                <cible> 8 </cible>
-            </choix>
-            <choix>
-                <titre> C </titre>
-                <contenu> Ignorer le sort et continuer à avancer </contenu>
-                <cible> 15 </cible>
-            </choix>
-        </reponses>
+
+        <choix>
+            <titre> A </titre>
+            <contenu> Tenter d'identifier le sort </contenu>
+            <cible> 7 </cible>
+        </choix>
+        <choix>
+            <titre> B </titre>
+            <contenu> Se préparer à esquiver </contenu>
+            <cible> 8 </cible>
+        </choix>
+        <choix>
+            <titre> C </titre>
+            <contenu> Ignorer le sort et continuer à avancer </contenu>
+            <cible> 11 </cible>
+        </choix>
+
+    </paragraphe>
+
+    <paragraphe>
+        <titre> 11 </titre>
+        <contenu>
+            Vous continuez à avancer à couvert. Vous êtes presque arrivé aux portes de la ville lorsque le ciel s'assombrit, des flammes apparaissent et se mêlent aux nuages puis des blocs de roches en feu tombent des cieux. Une pluie de météores ! C'est donc cela qu'incantait le shaman ! Heureusement un bouclier magique protège la ville et les météores ne parviennent pas à le briser, vous êtes en sécurité.
+        </contenu>
+
+        <choix>
+            <titre> A </titre>
+            <contenu> Entrer dans la ville </contenu>
+            <cible> 15 </cible>
+        </choix>
+
+    </paragraphe>
+
+    <paragraphe>
+        <titre> 12 </titre>
+        <contenu>
+            Vous chargez sur le shaman, les orcs tentent de vous bloquer mais vous êtes trop agile pour ces brutes, et vous les esquivez sans peine. Vous parvenez au niveau du shaman juste à temps pour lui asséner un coup d'épée et le tuer. Vous vous retournez et voyez les orcs fuir. Le combat est terminé.
+        </contenu>
+
+        <choix>
+            <titre> A </titre>
+            <contenu> Entrer dans la ville </contenu>
+            <cible> 15 </cible>
+        </choix>
+
+    </paragraphe>
+
+    <paragraphe>
+        <titre> 13 </titre>
+        <contenu>
+            Vous prenez votre couteau qui est à votre jambe et vous le lancez sur le shaman. La trajectoire est parfaite et le couteau vole droit vers la tête du shaman. Il est cependant intercepté par un orc qui, pour protéger son shaman, s'est mis sur la trajectoire du couteau. Le shaman finit d'incanter son sort, le ciel s'assombrit, des flammes apparaissent et se mêlent aux nuages puis des blocs de roches en feu tombent des cieux. Vous tentez de vous réfugier dans une grotte à proximité, mais une météore vous tombe dessus et vous mourrez.
+            Fin de la partie.
+        </contenu>
+
+        <choix>
+            <titre> A </titre>
+            <contenu> Revenir au menu principal </contenu>
+            <cible> ? </cible>
+        </choix>
+
+    </paragraphe>
+
+    <paragraphe>
+        <titre> 14 </titre>
+        <contenu>
+            Vous courrez vous réfugier dans la grotte. Vous arrivez juste à temps et voyez le ciel s'assombrir, des flammes apparaitre et se mêler aux nuages puis des blocs de roches en feu tomber des cieux. La grotte tremble sous les coups des météores, les murs intérieurs se fissurent et de la poussière tombe du plafond. Des rochers tombent également du plafond, vous parvenez à les éviter, puis tout devient calme. La pluie de météores a cessé.
+        </contenu>
+
+        <choix>
+            <titre> A </titre>
+            <contenu> Sortir de la grotte </contenu>
+            <cible> 16 </cible>
+        </choix>
+        <choix>
+            <titre> B </titre>
+            <contenu> Rester dans la grotte encore un peu </contenu>
+            <cible> 17 </cible>
+        </choix>
+
+    </paragraphe>
+
+    <paragraphe>
+        <titre> 15 </titre>
+        <contenu>
+            Alors que vous entrez dans la ville, un magicien vous interpelle : "Bonjour Traque-Source, mon nom est Ahroue, je suis le magicien de Cyseal. Ces orcs se font de plus en plus dangeureux. Vous venez pour le meurtre de Jacques ?"
+        </contenu>
+
+        <choix>
+            <titre> A </titre>
+            <contenu> Répondre "Oui, je viens pour enquêter sur ce meurtre" </contenu>
+            <cible> 18 </cible>
+        </choix>
+        <choix>
+            <titre> B </titre>
+            <contenu> Répondre "Non, je viens traquer un Ensourceleur" </contenu>
+            <cible> 19 </cible>
+        </choix>
+
+    </paragraphe>
+
+    <paragraphe>
+        <titre> 16 </titre>
+        <contenu>
+            Vous sortez de la grotte et voyez le champ de bataille dévasté, ravagé par la pluie de météores. La plupart des humains sont morts ou mourrants. Les orcs sont également mal en point, seul le shaman est indemne.
+        </contenu>
+
+        <choix>
+            <titre> A </titre>
+            <contenu> Ignorer les orcs et courir vers le shaman pour le tuer </contenu>
+            <cible> 20 </cible>
+        </choix>
+        <choix>
+            <titre> B </titre>
+            <contenu> Lancer un couteau sur le shaman </contenu>
+            <cible> 21 </cible>
+        </choix>
+
+    </paragraphe>
+
+    <paragraphe>
+        <titre> 17 </titre>
+        <contenu>
+            Vous restez un peu dans la grotte, tendant l'oreille pour essayer d'entendre un quelconque bruit. Il vous parvient des gémissements de douleurs et des râles d'agonies. La pluie de météores a dû être dévastatrice.
+        </contenu>
+
+        <choix>
+            <titre> A </titre>
+            <contenu> Sortir de la grotte </contenu>
+            <cible> 16 </cible>
+        </choix>
+
+    </paragraphe>
+
+    <paragraphe>
+        <titre> 18 </titre>
+        <contenu>
+            Ahroue vous dit : "Je m'en doutais, si vous avez besoin de quoi que ce soit, n'hésitez pas à venir me voir, je serais ravi de vous aider ! Je vous conseille d'aller à l'auberge du Crabe, là où Jacques est mort. Vous pouvez également parler au maire, Cécil, qui doit pouvoir vous aider. Pensez aussi à aller voir Aurus, le capitaine de la garde, c'est lui qui est chagé de l'enquête. Je dois malheureusement vous laisser Traque-Source, le fléau mort-vivant qui sévit sur ces terres ne va pas se régler tout seul." Sur ces mots, Ahroue prononce une incantation et se téléporte.
+        </contenu>
+
+        <choix>
+            <titre> A </titre>
+            <contenu> Aller à l'auberge du Crabe </contenu>
+            <cible> 22 </cible>
+        </choix>
+        <choix>
+            <titre> B </titre>
+            <contenu> Aller parler à Cécil </contenu>
+            <cible> 23 </cible>
+        </choix>
+        <choix>
+            <titre> C </titre>
+            <contenu> Aller parler à Aurus </contenu>
+            <cible> 24 </cible>
+        </choix>
+
+    </paragraphe>
+
+    <paragraphe>
+        <titre> 19 </titre>
+        <contenu>
+            Ahroue vous dit : "C'était une question réthorique, je sais exactement pourquoi vous êtes là.".
+        </contenu>
+
+        <choix>
+            <titre> A </titre>
+            <contenu> Vous excuser et dire que vous souhaitiez garder l'anonymat pour mieux enquêter </contenu>
+            <cible> 18 </cible>
+        </choix>
+
+    </paragraphe>
+
+    <paragraphe>
+        <titre> 20 </titre>
+        <contenu>
+            Les orcs sont trop faibles pour vous bloquer et vous parvenez jusqu'au shaman facilement. Vous lui assénez un violent coup d'épée qui le tue sur le coup. Vous achevez également les orcs qui restent.
+        </contenu>
+
+        <choix>
+            <titre> A </titre>
+            <contenu> Entrer dans la ville </contenu>
+            <cible> 15 </cible>
+        </choix>
+
+    </paragraphe>
+
+    <paragraphe>
+        <titre> 21 </titre>
+        <contenu>
+            Vous lancez un couteau sur le shaman. Votre lancé est parfait et touche le shaman en plein coeur qui meurt sur le coup. Vous achevez également les orcs qui restent.
+        </contenu>
+
+        <choix>
+            <titre> A </titre>
+            <contenu> Entrer dans la ville </contenu>
+            <cible> 15 </cible>
+        </choix>
+
+    </paragraphe>
+
+    <paragraphe>
+        <titre> 22 </titre>
+        <contenu>
+            Vous arrivez devant une belle auberge. Vous passez la porte et appercevez le barman derrière son contoir. Vous voyez également une trappe à gauche du contoir.
+        </contenu>
+        <choix>
+            <titre> A </titre>
+            <contenu> Interpeller le barman </contenu>
+            <cible> 25 </cible>
+        </choix>
+        <choix>
+            <titre> B </titre>
+            <contenu> Entrer discrètement par la trappe </contenu>
+            <cible> 26 </cible>
+        </choix>
+    </paragraphe>
+
+    <paragraphe>
+        <titre> 23 </titre>
+        <contenu>
+            Vous arrivez devant une magnifique maison à deux étages.
+        </contenu>
+
+        <choix>
+            <titre> A </titre>
+            <contenu> Frapper à la porte </contenu>
+            <cible> 27 </cible>
+        </choix>
+        <choix>
+            <titre> B </titre>
+            <contenu> Faire le tour pour épier aux la fenêtres </contenu>
+            <cible> 28 </cible>
+        </choix>
+
+    </paragraphe>
+
+    <paragraphe>
+        <titre> 24 </titre>
+        <contenu>
+            Vous arrivez devant une grande caserne. Vous entrez et voyez le capitaine de la garde, Aurus, à son bureau.
+        </contenu>
+
+        <choix>
+            <titre> A </titre>
+            <contenu> Faire un salut militaire </contenu>
+            <cible> 29 </cible>
+        </choix>
+        <choix>
+            <titre> B </titre>
+            <contenu> Lui demander ce qu'il sait sur le meurtre </contenu>
+            <cible> 30 </cible>
+        </choix>
+
     </paragraphe>
 </livre>

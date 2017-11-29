@@ -3,9 +3,7 @@
 
     <string name="app_name">SOYA</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
     <string name="speech_prompt">Say something&#8230;</string>
     <string name="speech_not_supported">Sorry! Your device doesn\'t support speech input</string>
-    <string name="tap_on_mic">Taper pour parler</string>
 
 </resources>

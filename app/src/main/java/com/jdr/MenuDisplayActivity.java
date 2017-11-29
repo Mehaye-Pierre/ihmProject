@@ -42,10 +42,10 @@ public class MenuDisplayActivity extends Activity {
     }
 
 
-    private void switchToGame(boolean newgame){
+    private void switchToGame(boolean newGame){
         Intent intent = new Intent(MenuDisplayActivity.this, MainActivity.class);
-        intent.putExtra(NEW_GAME, newgame);
-        intent.putExtra(LOAD_CHAPTER_ID, newgame);
+        intent.putExtra(NEW_GAME, newGame);
+        intent.putExtra(LOAD_CHAPTER_ID, newGame);
         startActivity(intent);
 
     }

@@ -12,12 +12,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.speech.RecognizerIntent;
 import android.view.Menu;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.speech.tts.TextToSpeech;
-
+import android.view.View;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -33,11 +36,14 @@ public class MainActivity extends Activity {
 
 	private TextView textRead;
 	private TextToSpeech TTS;
+	private LinearLayout LL;
 	private SharedPreferences sharedPref;
 	private int currentChapter;
 	private final int REQ_CODE_SPEECH_INPUT = 100;
 	final String NEW_GAME =  "NEW_GAME";
 	final String SAVED_CHAPTER = "SAVED_CHAPTER";
+	protected boolean ttsActivated = true;
+	protected boolean sttActivated =true;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +51,7 @@ public class MainActivity extends Activity {
 		setContentView(com.jdr.R.layout.activity_main);
 
 		textRead =  findViewById(com.jdr.R.id.readText);
+		LL = findViewById(R.id.choiceLayout);
 
 
 		// hide the action bar
@@ -73,37 +80,11 @@ public class MainActivity extends Activity {
 				currentChapter = getLoadChapter();
 			}
 		}
-		try {
 
-			InputStream is = getResources().openRawResource(R.raw.livre);
 
-			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 
-			Document doc = dBuilder.parse(is);
+		goToChapter(currentChapter);
 
-			Element element=doc.getDocumentElement();
-			element.normalize();
-
-			NodeList nList = doc.getElementsByTagName("paragraphe");
-			for (int i=0; i<nList.getLength(); i++) {
-
-				Node node = nList.item(i);
-				if (node.getNodeType() == Node.ELEMENT_NODE) {
-					Element element2 = (Element) node;
-					if (currentChapter == Integer.parseInt(getValue("titre", element2).trim())){
-						textRead.setText(getValue("contenu", element2));
-					}
-				}
-			}
-
-		} catch (ParserConfigurationException e) {
-			e.printStackTrace();
-		} catch (SAXException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 	}
 
 	/**
@@ -111,7 +92,6 @@ public class MainActivity extends Activity {
 	 */
 	private void readTextInput(){
 		String toSpeak = textRead.getText().toString();
-		Toast.makeText(getApplicationContext(), toSpeak,Toast.LENGTH_SHORT).show();
 		TTS.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null,null);
 	}
 
@@ -146,8 +126,63 @@ public class MainActivity extends Activity {
 		return sharedPref.getInt(SAVED_CHAPTER, 0);
 	}
 
-	private void goToChapter(int i){
+	private void goToChapter(int chapterValue){
+		try {
+			LL.removeAllViews();
+			InputStream is = getResources().openRawResource(R.raw.livre);
 
+			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+
+			Document doc = dBuilder.parse(is);
+
+			Element element=doc.getDocumentElement();
+			element.normalize();
+
+			NodeList nList = doc.getElementsByTagName("paragraphe");
+			for (int i=0; i<nList.getLength(); i++) {
+
+				Node node = nList.item(i);
+				if (node.getNodeType() == Node.ELEMENT_NODE) {
+					Element element2 = (Element) node;
+					if (chapterValue == Integer.parseInt(getValue("titre", element2).trim())){
+						textRead.setText(getValue("contenu", element2));
+						NodeList nodeListChoix = element2.getElementsByTagName("choix");
+
+						for(int j = 0; j < nodeListChoix.getLength();j++){
+							Node node2 = nodeListChoix.item(j);
+							if (node2.getNodeType() == Node.ELEMENT_NODE ) {
+								Element element4 = (Element) node2;
+								int tmp = Integer.parseInt(getValue("cible",element4).trim());
+								String tmp2 = getValue("contenu",element4);
+								TextView TV = new TextView(this);
+								addChoiceButton(tmp2,tmp);
+							}
+						}
+					}
+
+
+				}
+			}
+
+		} catch (ParserConfigurationException e) {
+			e.printStackTrace();
+		} catch (SAXException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		saveGame();
+		if(ttsActivated){
+			final Handler handler = new Handler();
+			handler.postDelayed(new Runnable() {
+				@Override
+				public void run() {
+					readTextInput();
+				}
+			}, 300);
+
+		}
 	}
 
 
@@ -188,9 +223,19 @@ public class MainActivity extends Activity {
 
 
 
+	private void addChoiceButton(String text, final int target){
+		Button test = new Button(this);
+		test.setText(text);
+		test.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				goToChapter(target);
+			}
+		});
 
-
-
-
-
+		LL.addView(test);
+	}
 }
+
+
+
