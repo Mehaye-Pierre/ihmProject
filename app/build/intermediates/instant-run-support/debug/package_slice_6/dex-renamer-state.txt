@@ -1,4 +1,4 @@
-#Wed Nov 15 11:06:55 CET 2017
-base.0=C\:\\Users\\Seawolf\\StudioProjects\\SpeechToText\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\25
+#Wed Nov 22 11:28:13 CET 2017
+base.0=C\:\\Users\\Seawolf\\StudioProjects\\SpeechToText\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\177
 renamed.0=classes.dex
-file.0=C\:\\Users\\Seawolf\\StudioProjects\\SpeechToText\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\25\\classes.dex
+file.0=C\:\\Users\\Seawolf\\StudioProjects\\SpeechToText\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\177\\classes.dex
