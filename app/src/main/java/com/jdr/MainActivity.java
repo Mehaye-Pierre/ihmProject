@@ -38,10 +38,13 @@ public class MainActivity extends Activity {
 	private TextToSpeech TTS;
 	private LinearLayout LL;
 	private SharedPreferences sharedPref;
+	private Button buttonChoices[];
 	private int currentChapter;
 	private final int REQ_CODE_SPEECH_INPUT = 100;
 	final String NEW_GAME =  "NEW_GAME";
 	final String SAVED_CHAPTER = "SAVED_CHAPTER";
+	final String TTS_ACTIVATED = "TTS_ACTIVATED";
+	final String STT_ACTIVATED = "STT_ACTIVATED";
 	protected boolean ttsActivated = true;
 	protected boolean sttActivated =true;
 
@@ -52,6 +55,7 @@ public class MainActivity extends Activity {
 
 		textRead =  findViewById(com.jdr.R.id.readText);
 		LL = findViewById(R.id.choiceLayout);
+		buttonChoices = new Button[3];
 
 
 		// hide the action bar
@@ -79,6 +83,8 @@ public class MainActivity extends Activity {
 			else {
 				currentChapter = getLoadChapter();
 			}
+			ttsActivated = intent.getBooleanExtra(TTS_ACTIVATED,true);
+			sttActivated = intent.getBooleanExtra(STT_ACTIVATED,true);
 		}
 
 
@@ -104,8 +110,6 @@ public class MainActivity extends Activity {
 		intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
 				RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
 		intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
-		intent.putExtra(RecognizerIntent.EXTRA_PROMPT,
-				getString(com.jdr.R.string.speech_prompt));
 		try {
 			startActivityForResult(intent, REQ_CODE_SPEECH_INPUT);
 		} catch (ActivityNotFoundException a) {
@@ -129,6 +133,7 @@ public class MainActivity extends Activity {
 	private void goToChapter(int chapterValue){
 		try {
 			LL.removeAllViews();
+			resetAllButtons();
 			InputStream is = getResources().openRawResource(R.raw.livre);
 
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -153,10 +158,15 @@ public class MainActivity extends Activity {
 							Node node2 = nodeListChoix.item(j);
 							if (node2.getNodeType() == Node.ELEMENT_NODE ) {
 								Element element4 = (Element) node2;
-								int tmp = Integer.parseInt(getValue("cible",element4).trim());
-								String tmp2 = getValue("contenu",element4);
-								TextView TV = new TextView(this);
-								addChoiceButton(tmp2,tmp);
+								String tmpStr = getValue("cible",element4).trim();
+								if (tmpStr.equals("?")){
+									addReturnToMenuButton();
+								}
+								else {
+									int tmp = Integer.parseInt(getValue("cible", element4).trim());
+									String tmp2 = getValue("contenu", element4);
+									addChoiceButton(tmp2, tmp, j);
+								}
 							}
 						}
 					}
@@ -183,6 +193,9 @@ public class MainActivity extends Activity {
 			}, 300);
 
 		}
+		if(sttActivated){
+			promptSpeechInput();
+		}
 	}
 
 
@@ -201,6 +214,22 @@ public class MainActivity extends Activity {
 				ArrayList<String> result = data
 						.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
 				String stringResult = result.get(0);
+				if(stringResult.equals("un") || stringResult.equals("hein")){
+					if (buttonChoices[0] != null)
+						buttonChoices[0].performClick();
+				}
+				else if(stringResult.equals("deux") || stringResult.equals("de")|| stringResult.equals("d'eux")){
+					if (buttonChoices[1] != null)
+						buttonChoices[1].performClick();
+				}
+				else if(stringResult.equals("trois") || stringResult.equals("troie")|| stringResult.equals("toi")|| stringResult.equals("toit")){
+					if (buttonChoices[2] != null)
+						buttonChoices[2].performClick();
+				}
+				else{
+					promptSpeechInput();
+				}
+
 			}
 			break;
 		}
@@ -223,7 +252,7 @@ public class MainActivity extends Activity {
 
 
 
-	private void addChoiceButton(String text, final int target){
+	private void addChoiceButton(String text, final int target,int index){
 		Button test = new Button(this);
 		test.setText(text);
 		test.setOnClickListener(new View.OnClickListener() {
@@ -232,8 +261,28 @@ public class MainActivity extends Activity {
 				goToChapter(target);
 			}
 		});
-
+		buttonChoices[index] = test;
 		LL.addView(test);
+	}
+
+	private void addReturnToMenuButton(){
+		Button menuBtn = new Button(this);
+		menuBtn.setText("Retourner au menu principal");
+		menuBtn.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				TTS.stop();
+				Intent intent = new Intent( MainActivity.this, MenuDisplayActivity.class);
+				startActivity(intent);
+			}
+		});
+
+		LL.addView(menuBtn);
+	}
+
+	private void resetAllButtons(){
+		for (int i = 0; i < 3; i++)
+			buttonChoices[i] = null;
 	}
 }
 
