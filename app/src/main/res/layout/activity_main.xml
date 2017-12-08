@@ -5,21 +5,34 @@
     android:background="@drawable/bg_gradient"
     android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/readText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="68dp"
-        android:text="Text to read" />
-
-    <LinearLayout
-        android:id="@+id/choiceLayout"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/readText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="132dp"
-        android:orientation="vertical"></LinearLayout>
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/readText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="68dp"
+                android:text="Text to read"
+                android:textAppearance="@android:style/TextAppearance.Holo.Medium" />
+
+            <LinearLayout
+                android:id="@+id/choiceLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/readText"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="132dp"
+                android:orientation="vertical"></LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
 </RelativeLayout>

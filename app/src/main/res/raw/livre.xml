@@ -398,7 +398,7 @@
     <paragraphe>
         <titre> 22 </titre>
         <contenu>
-            Vous arrivez devant une belle auberge. Vous passez la porte et appercevez le barman derrière son contoir. Vous voyez également une trappe à gauche du contoir.
+            Vous arrivez devant une belle auberge. Vous passez la porte et appercevez le barman derrière son comptoir. Vous voyez également une trappe à gauche du contoir.
         </contenu>
         <choix>
             <titre> A </titre>
@@ -425,7 +425,7 @@
         </choix>
         <choix>
             <titre> B </titre>
-            <contenu> Faire le tour pour épier aux la fenêtres </contenu>
+            <contenu> Faire le tour pour épier aux fenêtres </contenu>
             <cible> 28 </cible>
         </choix>
 

@@ -93,9 +93,6 @@ public class MainActivity extends Activity {
 
 	}
 
-	/**
-	 * Read the content of textRead
-	 */
 	private void readTextInput(){
 		String toSpeak = textRead.getText().toString();
 		TTS.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null,null);
@@ -190,11 +187,17 @@ public class MainActivity extends Activity {
 				public void run() {
 					readTextInput();
 				}
-			}, 300);
+			}, 800);
 
 		}
 		if(sttActivated){
-			promptSpeechInput();
+			final Handler handler2 = new Handler();
+			handler2.postDelayed(new Runnable() {
+				@Override
+				public void run() {
+					promptSpeechInput();
+				}
+			}, 800);
 		}
 	}
 
@@ -214,17 +217,24 @@ public class MainActivity extends Activity {
 				ArrayList<String> result = data
 						.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
 				String stringResult = result.get(0);
-				if(stringResult.equals("un") || stringResult.equals("hein")){
+				Toast.makeText(getApplicationContext(),
+						stringResult,
+						Toast.LENGTH_SHORT).show();
+				if(stringResult.contains("un") || stringResult.contains("hein") || stringResult.contains("1")){
 					if (buttonChoices[0] != null)
 						buttonChoices[0].performClick();
 				}
-				else if(stringResult.equals("deux") || stringResult.equals("de")|| stringResult.equals("d'eux")){
+				else if(stringResult.contains("deux") || stringResult.contains("de")|| stringResult.contains("d'eux") || stringResult.contains("2")){
 					if (buttonChoices[1] != null)
 						buttonChoices[1].performClick();
 				}
-				else if(stringResult.equals("trois") || stringResult.equals("troie")|| stringResult.equals("toi")|| stringResult.equals("toit")){
+				else if(stringResult.contains("trois") || stringResult.contains("troie")|| stringResult.contains("toi")|| stringResult.contains("toit") || stringResult.contains("groix") || stringResult.contains("3") || stringResult.contains("droit")){
 					if (buttonChoices[2] != null)
 						buttonChoices[2].performClick();
+				}
+				else if(stringResult.contains("menu")){
+					Intent intent = new Intent( MainActivity.this, MenuDisplayActivity.class);
+					startActivity(intent);
 				}
 				else{
 					promptSpeechInput();
@@ -276,7 +286,7 @@ public class MainActivity extends Activity {
 				startActivity(intent);
 			}
 		});
-
+		buttonChoices[0] = menuBtn;
 		LL.addView(menuBtn);
 	}
 
